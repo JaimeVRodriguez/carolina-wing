@@ -18,7 +18,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+code { white-space: nowrap; background: rgba(255,255,255,.12); padding: 1px 6px; }
 body {
   margin: 0;
   background: var(--black);
@@ -238,7 +239,23 @@ legend { font-family: var(--display); text-transform: uppercase; font-size: 1.6r
   .nav ul.open { display: flex; }
   .section { padding: 52px 0; }
 }
+.mobile-only { display: none; }
+.btn, .menu-btn { min-height: 44px; }
+.nav ul a:not(.btn) { padding: 6px 0; }
+@media (max-width: 720px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+  .footnote { margin-top: 12px; }
+}
 @media (max-width: 560px) {
+  .pick { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .pick .opt { padding: 12px; min-height: 76px; }
+  .pick .opt b { font-size: 1.05rem; }
+  .steps li { min-width: 0; flex-basis: calc(50% - 4px); }
+  .actions .btn { flex: 1 1 140px; text-align: center; }
+  .tier { padding: 18px; }
+  .hero { padding: 48px 0 56px; }
+  .cta .btn { display: block; margin: 10px auto 0 !important; max-width: 320px; }
   .g2, .g3, .g4, .row2 { grid-template-columns: 1fr; }
   .events { grid-template-columns: repeat(2, 1fr); }
   .schedule .row { grid-template-columns: 100px 1fr; font-size: 1.1rem; }
