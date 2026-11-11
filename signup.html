@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Become a Sponsor — Carolina Wing Championships</title>
+  <meta name="description" content="Sign up as a Carolina Wing Championships sponsor in three quick steps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23d8231f%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2714%27 font-weight=%27900%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27Impact,sans-serif%27%3ECWC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/nav.js" defer></script>
+  <script type="module" src="js/signup.js"></script>
+</head>
+<body>
+  <div class="proto-bar">Prototype preview — no real payments are taken</div>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Carolina Wing Championships home"><span class="mark">CWC</span><span>Carolina <b>Wing</b></span></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html#event">The Event</a></li>
+        <li><a href="index.html#schedule">Schedule</a></li>
+        <li><a href="index.html#cause">Our Cause</a></li>
+        <li><a href="sponsors.html">Sponsors</a></li>
+        <li><a class="btn small" href="signup.html" aria-current="page">Become a Sponsor</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Sponsor sign-up</p>
+      <h1 class="banner" style="font-size:clamp(2.4rem,7vw,4.5rem)">Join the lineup</h1>
+      <p class="lede">Three quick steps: choose a level, tell us about your business, and confirm.</p>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="wrap">
+      <ol class="steps" id="steps" aria-label="Progress">
+        <li data-step="1">1 · Level</li>
+        <li data-step="2">2 · Your business</li>
+        <li data-step="3">3 · Payment</li>
+        <li data-step="4">4 · Done</li>
+      </ol>
+
+      <div class="signup-grid">
+        <div>
+          <!-- Step 1 -->
+          <form id="step1" class="step" novalidate>
+            <fieldset>
+              <legend>Choose your sponsorship level</legend>
+              <div class="pick" id="tier-pick" role="radiogroup" aria-label="Sponsorship level"></div>
+              <p class="err" id="err-tierId" role="alert" style="color:#ff8a84"></p>
+            </fieldset>
+            <div class="actions"><button class="btn" type="submit">Continue</button></div>
+          </form>
+
+          <!-- Step 2 -->
+          <form id="step2" class="step" hidden novalidate>
+            <fieldset>
+              <legend>About your business</legend>
+              <div class="field"><label for="business">Business name *</label><input id="business" name="business" autocomplete="organization" required><div class="err" id="err-business"></div></div>
+              <div class="row2">
+                <div class="field"><label for="contact">Contact name *</label><input id="contact" name="contact" autocomplete="name" required><div class="err" id="err-contact"></div></div>
+                <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"><div class="err" id="err-phone"></div></div>
+              </div>
+              <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err" id="err-email"></div></div>
+              <div class="field"><label for="logo">Logo (PNG, JPG or SVG)</label><input id="logo" name="logo" type="file" accept="image/*"><div class="err" id="err-logo">Prototype: the file is not uploaded anywhere.</div></div>
+              <div class="field"><label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" rows="3" placeholder="Interested in competing? Want a vendor space? Questions about the Chili Championships?"></textarea></div>
+            </fieldset>
+            <div class="actions"><button class="btn ghost" type="button" data-back>Back</button><button class="btn" type="submit">Continue to payment</button></div>
+          </form>
+
+          <!-- Step 3 -->
+          <form id="step3" class="step" hidden novalidate>
+            <fieldset>
+              <legend>Payment</legend>
+              <div class="demo-note"><strong>Demo only.</strong> Nothing is charged and card details never leave your browser. Try <code>4242 4242 4242 4242</code>, any future date, any 3-digit code.</div>
+              <div class="field"><label for="cardName">Name on card *</label><input id="cardName" autocomplete="off"><div class="err" id="err-name"></div></div>
+              <div class="field"><label for="cardNumber">Card number *</label><input id="cardNumber" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="off" maxlength="23"><div class="err" id="err-number"></div></div>
+              <div class="row2">
+                <div class="field"><label for="expiry">Expiry (MM/YY) *</label><input id="expiry" inputmode="numeric" placeholder="12/30" maxlength="5" autocomplete="off"><div class="err" id="err-expiry"></div></div>
+                <div class="field"><label for="cvc">CVC *</label><input id="cvc" inputmode="numeric" maxlength="4" autocomplete="off"><div class="err" id="err-cvc"></div></div>
+              </div>
+              <p id="pay-note" style="color:var(--muted)"></p>
+            </fieldset>
+            <div class="actions"><button class="btn ghost" type="button" data-back>Back</button><button class="btn" type="submit" id="pay-btn">Pay</button></div>
+          </form>
+
+          <!-- Step 4 -->
+          <section id="step4" class="step success" hidden aria-live="polite">
+            <div class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
+            <h2>You're in the lineup!</h2>
+            <p class="lede" style="margin:12px auto 0">Thanks for backing the Carolina Wing Championships and Rowan Skate Park. This is a prototype, so nothing was charged.</p>
+            <div class="receipt"><dl id="receipt"></dl></div>
+            <p>Next steps in the real version: a confirmation email, a logo upload link, and a call from Terry to lock in your vendor space.</p>
+            <div class="actions" style="justify-content:center"><a class="btn" href="index.html">Back to home</a><button class="btn ghost" type="button" id="restart">Start over</button></div>
+          </section>
+        </div>
+
+        <aside class="summary" aria-label="Order summary">
+          <h3>Your sponsorship</h3>
+          <dl>
+            <div><dt>Level</dt><dd id="sum-level">Not selected</dd></div>
+            <div><dt>Business</dt><dd id="sum-business">—</dd></div>
+            <div><dt>Due today</dt><dd class="total" id="sum-total">$0</dd></div>
+            <div id="sum-sched-wrap" hidden><dt>Payment schedule</dt><dd><ul id="sum-sched"></ul></dd></div>
+          </dl>
+          <p style="margin:16px 0 0;font-size:.9rem;color:var(--muted)">Questions? Terry Grimble · <a href="tel:+19102296602">910-229-6602</a> · <a href="mailto:tgrimble@gmail.com">tgrimble@gmail.com</a></p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap"><p class="fine" style="border:0;margin:0;padding:0">Prototype website. Event details are subject to change. <a href="index.html">Home</a> · <a href="sponsors.html">Sponsor levels</a></p></div>
+  </footer>
+</body>
+</html>
